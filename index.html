@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HertzShift — Retune your audio. Verify it. Prove it.</title>
+<meta name="description" content="HertzShift retunes audio between reference tunings (440 Hz → 432 Hz, 528 Hz and more) and independently verifies the result with a tamper-evident certificate.">
+<style>
+  :root {
+    --bg: #0f1117;
+    --card: #171a25;
+    --border: #272b3b;
+    --text: #eceef6;
+    --muted: #98a0b8;
+    --faint: #7c84a0;
+    --accent1: #8b5cf6;
+    --accent2: #22d3ee;
+    --amber: #fbbf24;
+    --green: #34d399;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Segoe UI Variable Text', 'Segoe UI', system-ui, sans-serif;
+    line-height: 1.6;
+  }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 0 24px; }
+
+  header { padding: 26px 0; display: flex; align-items: center; gap: 14px; }
+  .logo { width: 44px; height: 44px; border-radius: 12px; flex: none; }
+  .brand { font-size: 1.35rem; font-weight: 800; letter-spacing: -0.5px; }
+  .pill {
+    margin-left: auto; color: var(--accent2); font-size: 0.7rem; font-weight: 700;
+    letter-spacing: 1px; border: 1px solid rgba(34,211,238,0.35);
+    background: rgba(34,211,238,0.1); border-radius: 999px; padding: 4px 12px;
+  }
+
+  .hero { padding: 64px 0 48px; text-align: center; }
+  .hero h1 {
+    font-size: clamp(2rem, 5.5vw, 3.4rem); font-weight: 800; letter-spacing: -1.5px;
+    line-height: 1.15;
+  }
+  .hero h1 .grad {
+    background: linear-gradient(90deg, var(--accent1), var(--accent2));
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .hero p.sub {
+    margin: 18px auto 0; max-width: 560px; color: var(--muted); font-size: 1.1rem;
+  }
+  .cta {
+    display: inline-block; margin-top: 34px; padding: 16px 36px; border-radius: 14px;
+    background: linear-gradient(90deg, var(--accent1), #6d5ae8 60%, var(--accent2));
+    color: #fff; font-weight: 800; font-size: 1.1rem; text-decoration: none;
+    transition: filter .15s ease, transform .15s ease;
+  }
+  .cta:hover { filter: brightness(1.15); transform: translateY(-1px); }
+  .cta-meta { margin-top: 12px; color: var(--faint); font-size: 0.85rem; }
+
+  .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; padding: 30px 0 10px; }
+  .card {
+    background: linear-gradient(180deg, #1a1e2b, #14161f);
+    border: 1px solid var(--border); border-top-color: #303650;
+    border-radius: 14px; padding: 24px;
+  }
+  .card h3 { font-size: 1.02rem; margin-bottom: 8px; }
+  .card p { color: var(--muted); font-size: 0.93rem; }
+  .card .ic { font-size: 1.5rem; display: block; margin-bottom: 10px; }
+
+  .steps { padding: 46px 0 10px; }
+  .steps h2, .honesty h2 { font-size: 1.5rem; letter-spacing: -0.5px; margin-bottom: 18px; }
+  .step { display: flex; gap: 16px; padding: 12px 0; align-items: baseline; }
+  .step .n {
+    flex: none; width: 30px; height: 30px; border-radius: 999px; text-align: center;
+    line-height: 30px; font-weight: 800; font-size: 0.9rem; color: #fff;
+    background: linear-gradient(135deg, var(--accent1), var(--accent2));
+  }
+  .step p { color: var(--muted); }
+  .step p b { color: var(--text); }
+
+  .honesty { padding: 42px 0 8px; }
+  .honesty .card { border-left: 3px solid var(--green); }
+  .honesty p { color: var(--muted); font-size: 0.95rem; }
+  .honesty p + p { margin-top: 10px; }
+  .honesty b { color: var(--text); }
+
+  .notice {
+    margin: 42px 0 0; border-left: 3px solid var(--amber);
+    background: rgba(251,191,36,0.06); border-radius: 8px; padding: 16px 18px;
+    color: var(--muted); font-size: 0.92rem;
+  }
+  .notice b { color: var(--amber); }
+
+  footer { padding: 48px 0 36px; color: var(--faint); font-size: 0.85rem; text-align: center; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <svg class="logo" viewBox="0 0 46 46" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#8b5cf6"/><stop offset="1" stop-color="#22d3ee"/>
+        </linearGradient>
+      </defs>
+      <rect width="46" height="46" rx="13" fill="url(#g)"/>
+      <path d="M8 23 Q 12 10, 16 23 T 24 23 T 32 23 T 40 23" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round"/>
+    </svg>
+    <div class="brand">HertzShift</div>
+    <div class="pill">EARLY TEST BUILD</div>
+  </header>
+
+  <section class="hero">
+    <h1>Retune your audio.<br><span class="grad">Verify it. Prove it.</span></h1>
+    <p class="sub">Convert any song between reference tunings — 440&nbsp;Hz to 432&nbsp;Hz, 528&nbsp;Hz, or anything else — and get independent, tamper-evident proof that the result is real.</p>
+    <a class="cta" href="https://github.com/hertzshift/hertzshift.github.io/releases/download/v0.1.0/HertzShift-win64-testbuild.zip">⬇&nbsp; Download for Windows</a>
+    <div class="cta-meta">Free test build · Windows 10/11 (64-bit) · ~153 MB · works fully offline</div>
+  </section>
+
+  <section class="features">
+    <div class="card">
+      <span class="ic">🎵</span>
+      <h3>Reads your song's tuning</h3>
+      <p>Drop in any audio file — it measures the actual reference tuning in seconds, even on fully produced tracks with vocals, bass, and drums.</p>
+    </div>
+    <div class="card">
+      <span class="ic">🔁</span>
+      <h3>Retunes with care</h3>
+      <p>Music mode for best quality, Video mode to keep the length locked to picture. Optional noise reduction, volume leveling, and voice clarity.</p>
+    </div>
+    <div class="card">
+      <span class="ic">✅</span>
+      <h3>Proves the result</h3>
+      <p>A separate, independent checker measures the output and issues a certificate — including an honest FAILED if anything is off. No silent errors.</p>
+    </div>
+  </section>
+
+  <section class="steps">
+    <h2>How it works</h2>
+    <div class="step"><div class="n">1</div><p><b>Drop a song in.</b> HertzShift reads its current tuning automatically — or tells you plainly when it can't, instead of guessing.</p></div>
+    <div class="step"><div class="n">2</div><p><b>Pick a target.</b> One click for 432, 440, 444, or 528&nbsp;Hz — or type any custom tuning.</p></div>
+    <div class="step"><div class="n">3</div><p><b>Convert &amp; Verify.</b> An independent check measures the new file and saves a tamper-evident certificate PDF next to it.</p></div>
+  </section>
+
+  <section class="honesty">
+    <h2>Built on honesty</h2>
+    <div class="card">
+      <p><b>The verification is genuinely independent.</b> The code that checks the result shares nothing with the code that produced it — different algorithm, different measurements, enforced by automated tests.</p>
+      <p><b>It never fakes confidence.</b> Content with no musical notes (speech, drums, ambient sound) has no tuning to detect — HertzShift says so instead of inventing a number. Wrong settings produce an honest FAILED with a plain-English explanation and a suggested fix.</p>
+      <p><b>Your audio stays yours.</b> Everything runs offline on your computer. Nothing is uploaded, ever.</p>
+    </div>
+  </section>
+
+  <div class="notice">
+    <b>Early test build:</b> this download isn't code-signed yet, so Windows SmartScreen may warn you ("unrecognized app"). If you trust this page, click <i>More info → Run anyway</i>. PCs with Smart App Control enabled may block unsigned apps entirely — a signed release is planned.
+  </div>
+
+  <footer>
+    HertzShift · verified audio retuning · early test build — feedback welcome
+  </footer>
+</div>
+</body>
+</html>
